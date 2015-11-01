@@ -1,12 +1,17 @@
 $content-width: $TOTAL_COLUMNS * 3 / 4;
 $sidebar-width: $TOTAL_COLUMNS / 4;
+$content-padding: $VERTICAL_SPACING $HORIZONTAL_SPACING;
+$sidebar-padding: $VERTICAL_SPACING $HORIZONTAL_SPACING;
 
 main {
   @include grid-container();
   .content {
     @include grid-column($content-width);
+    padding: $content-padding;
+    border-right: 1px dashed #000;
   }
   aside {
     @include grid-column-last($sidebar-width);
+    padding: $sidebar-padding;
   }
 }

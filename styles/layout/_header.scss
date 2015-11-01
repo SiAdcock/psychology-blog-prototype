@@ -1,6 +1,7 @@
 $large: $DEVICE_LARGE;
 $header-background-color: $BRAND_COLOR_1;
 $header-font-color: $FONT_COLOR_1;
+$logo-margin: $HORIZONTAL_SPACING;
 
 header {
   background-color: $header-background-color;
@@ -13,7 +14,7 @@ header {
     height: 400px;
   }
   .logo {
-    @include margin-before-after(10px);
+    @include margin-before-after($logo-margin);
   }
   .logo i {
     display: flex;
