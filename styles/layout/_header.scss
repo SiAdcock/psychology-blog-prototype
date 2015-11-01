@@ -1,0 +1,10 @@
+$large: $DEVICE_LARGE;
+
+header {
+  @include container;
+  background-color: #ffffbb;
+  height: 100px;
+  @include breakpoint($large) {
+    height: 500px;
+  }
+}
