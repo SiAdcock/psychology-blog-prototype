@@ -1,7 +1,2 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: arial;
-}
+@import "base";
+@import "layout";
