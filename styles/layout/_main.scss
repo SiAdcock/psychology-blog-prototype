@@ -1,0 +1,12 @@
+$content-width: $TOTAL_COLUMNS * 3 / 4;
+$sidebar-width: $TOTAL_COLUMNS / 4;
+
+main {
+  @include grid-container();
+  .content {
+    @include grid-column($content-width);
+  }
+  aside {
+    @include grid-column-last($sidebar-width);
+  }
+}

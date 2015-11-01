@@ -3,7 +3,6 @@ $header-background-color: $BRAND_COLOR_1;
 $header-font-color: $FONT_COLOR_1;
 
 header {
-  @include grid-container();
   background-color: $header-background-color;
   height: 100px;
   display: flex;
