@@ -3,9 +3,10 @@
 var express = require('express');
 var fs = require('fs');
 var favicon = require('serve-favicon');
+var path = require('path');
 var server = express();
 
-server.use(favicon(__dirname + '/favicon.ico'));
+server.use(favicon(path.join(__dirname, '/favicon.ico')));
 server.use('/', function(req, res) {
   var html = fs.readFileSync('./index.html', 'utf8');
 
