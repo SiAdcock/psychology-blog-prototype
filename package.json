@@ -20,6 +20,7 @@
   "homepage": "https://github.com/SiAdcock/psychology-blog-prototype#readme",
   "dependencies": {
     "express": "^4.13.3",
+    "normalize.scss": "^0.1.0",
     "serve-favicon": "^2.3.0",
     "serve-static": "^1.10.0",
     "susy": "^2.2.6"

@@ -1,5 +1,15 @@
+//Colours
+$BRAND_COLOR_1: #ff5;
+$BRAND_COLOR_2: #555;
+
+//Grid
+$TOTAL_COLUMNS: 12;
+
 //Devices
 $DEVICE_LARGE: device-large;
 $DEVICE_SMALL: device-small;
 $SMALL_DEVICE_MAX_WIDTH: 767px;
 $LARGE_DEVICE_MAX_WIDTH: 3200px;
+
+//Typography
+$FONT_COLOR_1: $BRAND_COLOR_2;
