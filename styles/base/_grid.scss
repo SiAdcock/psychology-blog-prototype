@@ -2,9 +2,12 @@
 
 $columns: $TOTAL_COLUMNS;
 $small-device-max-width: $SMALL_DEVICE_MAX_WIDTH;
-$large-device-min-width: $SMALL_DEVICE_MAX_WIDTH + 1;
+$medium-device-min-width: $SMALL_DEVICE_MAX_WIDTH + 1;
+$medium-device-max-width: $MEDIUM_DEVICE_MAX_WIDTH;
+$large-device-min-width: $MEDIUM_DEVICE_MAX_WIDTH + 1;
 $large-device-max-width: $LARGE_DEVICE_MAX_WIDTH;
 $small: $DEVICE_SMALL;
+$medium: $DEVICE_MEDIUM;
 $large: $DEVICE_LARGE;
 
 $susy: (
@@ -82,6 +85,9 @@ $susy: (
   @if $point == $small {
     @media (max-width: $small-device-max-width) { @content; }
   }
+  @else if $point == $medium {
+    @media (min-width: $medium-device-min-width) and (max-width: $medium-device-max-width) { @content; }
+  }
   @else if $point == $large {
     @media (min-width: $large-device-min-width) and (max-width: $large-device-max-width) { @content; }
   }
@@ -89,4 +95,25 @@ $susy: (
 
 @mixin margin-before-after($margin) {
   @include squish($margin);
+}
+.sm-hidden {
+  @include breakpoint($small) {
+    display: none;
+  }
+}
+
+.md-hidden {
+  @include breakpoint($medium) {
+    display: none;
+  }
+}
+
+.lg-hidden {
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
 }

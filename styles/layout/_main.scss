@@ -1,17 +1,34 @@
-$content-width: $TOTAL_COLUMNS * 3 / 4;
-$sidebar-width: $TOTAL_COLUMNS / 4;
+$content-width-large: $TOTAL_COLUMNS * 3 / 4;
+$sidebar-width-large: $TOTAL_COLUMNS / 4;
+$content-width-medium: $TOTAL_COLUMNS * 2 / 3;
+$sidebar-width-medium: $TOTAL_COLUMNS / 3;
+$full-width: $TOTAL_COLUMNS;
 $content-padding: $VERTICAL_SPACING $HORIZONTAL_SPACING;
 $sidebar-padding: $VERTICAL_SPACING $HORIZONTAL_SPACING;
 
 main {
   @include grid-container();
   .content {
-    @include grid-column($content-width);
-    padding: $content-padding;
-    border-right: 1px dashed #000;
+    @include grid-column($full-width);
+    @include breakpoint($medium) {
+      @include grid-column($content-width-medium);
+      padding: $content-padding;
+      border-right: 1px dashed #000;
+    }
+    @include breakpoint($large) {
+      @include grid-column($content-width-large);
+      padding: $content-padding;
+      border-right: 1px dashed #000;
+    }
+
   }
   aside {
-    @include grid-column-last($sidebar-width);
+    @include breakpoint($medium) {
+      @include grid-column-last($sidebar-width-medium);
+    }
+    @include breakpoint($large) {
+      @include grid-column-last($sidebar-width-large);
+    }
     padding: $sidebar-padding;
   }
 }
