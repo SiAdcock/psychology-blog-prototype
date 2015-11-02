@@ -1,0 +1,60 @@
+$large: $DEVICE_LARGE;
+$header-background-color: $BRAND_COLOR_1;
+$header-font-color: $FONT_COLOR_1;
+$logo-margin: $HORIZONTAL_SPACING;
+
+header {
+  background-color: $header-background-color;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .logo {
+    @include margin-before-after($logo-margin);
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      font-size: 3em;
+      font-style: normal;
+      width: 70px;
+      height: 70px;
+      color: $header-font-color;
+      border: 5px solid $header-font-color;
+      border-radius: 5000px;
+      @include breakpoint($large) {
+        align-items: flex-end;
+        width: 90px;
+        height: 90px;
+        font-size: 5em;
+      }
+    }
+  }
+  h1 {
+    color: $header-font-color;
+    font-size: 2em;
+    @include breakpoint($large) {
+      font-size: 3em;
+    }
+    > span {
+      display: block;
+      position: relative;
+      margin: 0;
+      &::after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 5px;
+        border-bottom: 1px dashed $header-font-color;
+        @include breakpoint($large) {
+          bottom: 9px;
+        }
+      }
+    }
+    > small {
+      display: block;
+      font-size: 35%;
+      padding-left: 5px;
+    }
+  }
+}

@@ -1,42 +1,8 @@
 $large: $DEVICE_LARGE;
-$header-background-color: $BRAND_COLOR_1;
-$header-font-color: $FONT_COLOR_1;
-$logo-margin: $HORIZONTAL_SPACING;
 
 header {
-  background-color: $header-background-color;
   height: 100px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
   @include breakpoint($large) {
-    align-items: center;
     height: 400px;
-  }
-  .logo {
-    @include margin-before-after($logo-margin);
-  }
-  .logo i {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    font-size: 5em;
-    font-style: normal;
-    color: $header-font-color;
-    border: 5px solid $header-font-color;
-    border-radius: 5000px;
-    width: 90px;
-    height: 90px;
-  }
-  h1 {
-    margin: 0;
-    color: $header-font-color;
-    font-size: 3em;
-    border-bottom: 1px dashed $header-font-color;
-    small {
-      @include clearfix();
-      font-size: 35%;
-      padding-left: 5px;
-    }
   }
 }
